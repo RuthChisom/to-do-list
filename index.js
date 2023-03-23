@@ -24,12 +24,19 @@ const addItem = () => {
         remove.innerHTML = "Remove";    //label remove button
         // function to remove
         remove.onclick = function(){
-            // alert('here be dragons');return false;
-            li.parentNode.removeChild(li);
+            if (confirm("Are you sure you want to delete this item?")) {
+                li.parentNode.removeChild(li);
+            }
           };
 
         let edit = document.createElement("button");  //create edit button
         edit.innerHTML = "Edit";    //label edit button
+        // function to edit
+        edit.onclick = function(){
+            alert('here be dragons');return false;
+            
+        };
+
         li.append(text);    //add text to list
         li.append(remove);  //add remove button to list
         li.append(edit);  //add edit button to list
